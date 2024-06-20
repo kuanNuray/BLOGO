@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container" style="margin-top: 150px;">
+    <h1>Create a New Post</h1>
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            {{ form.content.label_tag }}
+            {{ form.content }}п
+        </div>
+        <div class="form-group">
+            {{ form.is_published.label_tag }}
+            {{ form.is_published }}
+        </div>
+        <div class="form-group">
+            {{ form.photo.label_tag }}
+            {{ form.photo }}
+        </div>
+        <div class="form-group">
+            {{ form.categotia.label_tag }}
+            {{ form.categotia }}
+        </div>
+        <div class="form-group">
+            {{ form.slug.label_tag }}
+            {{ form.slug }}
+        </div>
+        <button type="submit" class="btn">Save</button>
+    </form>
+</div>
+{% endblock %}
+
